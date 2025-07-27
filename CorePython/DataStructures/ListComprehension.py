@@ -3,6 +3,7 @@
 # For more information follow the link below.
 # https://www.geeksforgeeks.org/python/python-list-comprehension/
 
+print()
 numbers = [1,3,5]
 print(f"ORIGINAL LIST{numbers}")
 print("Example doubling a list of values by multiplying by 2:")
