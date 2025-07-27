@@ -1,24 +1,16 @@
-#Quick intro into python
+strings = [
+    {"name":"angel","age":23},
+    {"name":"angel","age":25},
+    {"name":"angel","age":27},
+]
+print(strings[0]["name"])
 
-#asigning variables
-num = 10
-a = b = c = 100
-string = "angel"
-isItDark = True
+for i in strings:
+    print(f"{i["age"]}", end =" ")
 
-#Global variables
-#To modify a global variable you need to implicitly call global on the variable name
-str = "Hello"
+print()
+nums = [1,2,3,4,5]
+new_nums = [num * 2 for num in nums]
+print(new_nums)
 
-def fun():
-    global str
-    str += " World!"
-
-
-fun()
-print(str)
-
-# using IN keyword
-movies = {"The matrix","F1","Ford v Ferrari "}
-user_input = input("Enter favorite movie:" )
-print(user_input in movies)
+num_dict = {}
