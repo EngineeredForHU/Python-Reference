@@ -1,6 +1,9 @@
 # This file will have more practical examples of manipulating strings in lists, dicts, sets etc
 # For more information follow the link below:
-#
+# https://www.geeksforgeeks.org/python/python-string-methods/
+
+# IMPORTANT: StringMethods3 will have more challenging examples
+
 # This is a fake list for practice
 names = [
     "Alice",
@@ -56,6 +59,13 @@ print("NAMES > 5:")
 for i in li:
     print(f"{i}", end=", ")
 
+print("\n-----------------")
+
+# Now I will sort names alphabetically
+print(f"Sort Alphabetically: ")
+sorted_names = sorted(names)
+for name in sorted_names:
+    print(f"{name}", end=" ")
 
 
 
