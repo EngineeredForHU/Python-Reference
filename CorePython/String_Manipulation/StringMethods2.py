@@ -2,7 +2,7 @@
 # For more information follow the link below:
 # https://www.geeksforgeeks.org/python/python-string-methods/
 
-# IMPORTANT: StringMethods3 will have more challenging examples
+# IMPORTANT: StringMethods3 will have more examples
 
 # This is a fake list for practice
 names = [

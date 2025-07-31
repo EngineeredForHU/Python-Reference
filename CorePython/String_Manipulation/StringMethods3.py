@@ -1,4 +1,3 @@
-# These examples are harder than the previous examples,
 # These examples include for loops, string methods, String Slicing,
 # For more information follow the link below:
 #
