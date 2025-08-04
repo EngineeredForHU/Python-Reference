@@ -10,7 +10,7 @@ def add_user():
     full_name = input("Enter Full Name: ")
     credit_card_number = input("Enter credit card number: ")
     cvv_number = int(input("Enter CVV: "))
-    expire_date = int(input("Enter Expiration Date: "))
+    expire_date = input("Enter Expiration Date: ")
 
     print("Shipping Information")
     address = input("Enter shipping address: ")
