@@ -2,41 +2,80 @@
 
 grocery_list = []
 
-def add_to_list ():
-    print("Add items to grocery list:")
-    item = input("What item would you like to add? ")
-    quantity = int(input("Enter Quantity: "))
-    price = float(input("How much does it cost? "))
+def menu():
+    print(f'Welcome to my grocery list app!')
+    print(f'1. add to grocery list: ')
+    print(f'2. Remove item')
+    print(f'3. Display items / total cost')
+    print(f'4. quit')
+
+
+def add_to_list():
+    print("\nAdd items to grocery list:")
+
+    item = input("What item would you like to add? ").strip()
+
+    try:
+        quantity = int(input("Enter Quantity: "))
+        price = float(input("How much does it cost? "))
+    except ValueError:
+        print("❌ Invalid input. Please enter numeric values for quantity and price.\n")
+        return  # Exit early if input fails
 
     item_list = {
         'item': item,
         'price': price,
-        'quantity':quantity
+        'quantity': quantity
     }
+
     grocery_list.append(item_list)
-    print("Added item successfully!")
+    print("✅ Item added successfully!\n")
+
+
+
+
 
 def display_info(finished_grocery_list):
-    print(f"{'Qty':<5} {'Item':<15} {'Price':<10}")
+    print("\nITEM LISTS:")
+    print(f"{'#':<5}{'Qty':<5} {'Item':<15} {'Price':<10} {'Cost':<10}")
     print("-" * 45)
-    for i, item in enumerate(finished_grocery_list,0):
-        print(f"{item['quantity']:<5} {item['item']:<15} ${item['price']:<10}")
+    for i, item in enumerate(finished_grocery_list,1):
+        item_total_cost = item['price'] * item['quantity']
+        print(f"{i:<5}{item['quantity']:<5} {item['item']:<15} ${item['price']:<10} ${item_total_cost:<10}")
     add_total(finished_grocery_list)
+    print()
 
 def add_total(total_cost):
     total_cost_of_items = 0
     for i in total_cost:
-        if i['quantity'] > 1:
             total_cost_of_items += i['quantity'] * i['price']
-        else:
-            total_cost_of_items += i['price']
-    print(f'Total cost: ${total_cost_of_items}')
+    print(f'Total Cost: ${total_cost_of_items}')
+
+
+def remove_item(finished_grocery_list):
+    display_info(finished_grocery_list)
+    item_to_be_removed = input("What item would you like to remove? ")
+    for item in finished_grocery_list:
+        if item['item'] == item_to_be_removed:
+            grocery_list.remove(item)
+
+
+
 
 
 while True:
-    add_to_list()
-    another_user = input("Do you want to enter another item? Y/n ").strip().lower()
-    if another_user != 'y':
-        print()
+    menu()
+    user_choice = int(input("Enter the number to the action you want to perform: "))
+    if user_choice == 1:
+        add_to_list()
+    elif user_choice == 2:
+        if not grocery_list:
+            print("Error: Empty list, add items before you can remove an item (:\n")
+        else:
+            remove_item(grocery_list)
+    elif user_choice == 3:
         display_info(grocery_list)
+    else:
         break
+
+
