@@ -9,7 +9,6 @@ def menu():
     print(f'3. Display items / total cost')
     print(f'4. quit')
 
-
 def add_to_list():
     print("\nAdd items to grocery list:")
 
@@ -30,10 +29,6 @@ def add_to_list():
 
     grocery_list.append(item_list)
     print("✅ Item added successfully!\n")
-
-
-
-
 
 def display_info(finished_grocery_list):
     print("\nITEM LISTS:")
