@@ -1,71 +1,42 @@
-# animals.py
-
-class Animal:
-    '''Animal class with speak, move, and eat methods.'''
-    def __init__(self, name="NoName"):
-        print("ANIMAL: Constructor")
-        self.name = name
-
-    def speak(self):
-        print("ANIMAL " + self.name + ": speaks")
-
-    def move(self):
-        print("ANIMAL " + self.name + ": I'm moving")
-
-    def eat(self):
-        print("ANIMAL " + self.name + ": I'm hungry!")
-
-
-class Dog(Animal):
-    '''Dog class extends Animal with fetch method.'''
-    def __init__(self, name="NoName"):
-        super().__init__(name)
-        print("DOG: Constructor")
-
-    def speak(self):
-        print("DOG " + self.name + ": Woof! Woof!")
-
-    def move(self):
-        print("DOG " + self.name + ": I'm running!")
-
-    def fetch(self):
-        print("DOG " + self.name + ": Ball! Ball!")
-
-
-class Cat(Animal):
-    '''Cat class extends Animal.'''
-    def __init__(self, name="NoName"):
-        super().__init__(name)
-        print("CAT: Constructor")
-
-    def speak(self):
-        print("CAT " + self.name + ": Meow!")
-
-    def move(self):
-        print("CAT " + self.name + ": Later")
+data_base = [
+    {
+        'name': 'Angel',
+        'age': 24,
+        'card_information': {
+            'fname': 'Angel',
+            'lname': 'Perez',
+            'card_num': '1234122313',
+            'cvv': '123',
+            'expr_date': '08/28'
+        },
+        'shipping_address': {
+            'address': '5727 w roma ave',
+            'city': 'Phoenix',
+            'state': 'Arizona',
+            'zip_code': '85031'
+        }
+    },
+    {
+        'name': 'Samantha',
+        'age': 30,
+        'card_information': {
+            'fname': 'Samantha',
+            'lname': 'Lee',
+            'card_num': '9876543210',
+            'cvv': '456',
+            'expr_date': '09/29'
+        },
+        'shipping_address': {
+            'address': '1234 elm street',
+            'city': 'Austin',
+            'state': 'Texas',
+            'zip_code': '73301'
+        }
+    }
+]
 
 
-class Parrot(Animal):
-
-    def __init__(self, name="NoName"):
-        super().__init__(name)
-        print("Constructor")
-
-    def speak(self):
-        print("Parrot " + self.name + ":hey how are ya? hey how are ya?")
-
-    def move(self):
-        print("PARROT " + self.name + ": I'm flying around!")
+print(data_base[0]['card_information']['cvv'])     # Angel's CVV
+print(data_base[1]['shipping_address']['state'])   # Samantha's state
 
 
-if __name__ == "__main__":
-    print("MAIN: Animal list example")
-    animals = [
-        Animal("George"),
-        Dog("Spot"),
-        Cat("Eek"),
-        Parrot("Polly")
-    ]
-    for animal in animals:
-        animal.speak()
-        animal.move()
