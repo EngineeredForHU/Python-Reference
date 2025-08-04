@@ -27,7 +27,6 @@ def add_total(total_cost):
     print(f'Total cost: ${total_cost_of_items}')
 
 
-
 while True:
     add_to_list()
     another_user = input("Do you want to enter another item? Y/n ").strip().lower()
