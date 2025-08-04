@@ -24,7 +24,7 @@ def add_total(total_cost):
     total_cost_of_items = 0
     for i in total_cost:
         total_cost_of_items += i['price']
-    print(f'Total sum: ${total_cost_of_items}')
+    print(f'Total cost: ${total_cost_of_items}')
 
 
 
