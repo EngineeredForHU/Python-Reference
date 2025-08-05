@@ -74,6 +74,5 @@ while True:
     elif user_choice == 3:
         display_info(grocery_list)
     else:
+        print("Goodbye!")
         break
-
-
