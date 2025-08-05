@@ -7,3 +7,5 @@ for number in numbers:
         even.append(number)
 print(even)
 
+
+print(36/3)
