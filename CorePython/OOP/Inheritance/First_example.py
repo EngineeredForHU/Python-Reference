@@ -1,4 +1,5 @@
 # This file will showcase a few examples of inheritance
+ # Although inheritance is nice, class composition is used far more than inheritance Look for class composition file.
 
 # Will first create a class called 'device' that reads in a device
 class Device:
