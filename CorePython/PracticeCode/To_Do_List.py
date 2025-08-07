@@ -4,10 +4,12 @@ grocery_list = []
 
 def menu():
     print(f'Welcome to my grocery list app!')
-    print(f'1. add to grocery list: ')
+    print(f'1. Add to grocery list: ')
     print(f'2. Remove item')
     print(f'3. Display items / total cost')
-    print(f'4. quit')
+    print(f'4. Quit and save')
+    print(f'5. Quit')
+
 
 def add_to_list():
     print("\nAdd items to grocery list:")
@@ -26,7 +28,6 @@ def add_to_list():
         'price': price,
         'quantity': quantity
     }
-
     grocery_list.append(item_list)
     print("✅ Item added successfully!\n")
 
@@ -59,7 +60,8 @@ def remove_item(finished_grocery_list):
     for item in finished_grocery_list:
         if item['item'] == item_to_be_removed.lower().strip():
             grocery_list.remove(item)
-
+        else:
+            print("Item not in list.\n")
 
 while True:
     menu()
@@ -73,6 +75,8 @@ while True:
             remove_item(grocery_list)
     elif user_choice == 3:
         display_info(grocery_list)
+    elif user_choice == 4:
+        pass
     else:
         print("Goodbye!")
         break

@@ -2,6 +2,8 @@
 # For a more comprehensive explanation head to:
 # https://www.geeksforgeeks.org/python/file-handling-python/
 
+# This is a basic example, for a more practical example head to: withopen_file_example.py
+
 # Running this file will create a file in the current working directory
 # Just be aware!
 

@@ -1,15 +1,15 @@
-class Store:
-    def __init__(self, name, item):
-        self.name = name
-        self.item = []
+class FileManager:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
 
-    def add_item(self,name, price):
-        item = {"name": name, "price": price}
-        self.item.append(item)
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
 
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.file.close()
 
-    def stock_price(self):
-        return sum([item["price"] for item in self.item])
-
-    def __str__(self):
-        print(f"")
+# using the custom context manager
+with FileManager('example.txt', 'w') as file:
+    file.write('Hello, World!')
