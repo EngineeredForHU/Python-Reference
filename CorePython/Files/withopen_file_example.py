@@ -3,3 +3,6 @@
 # It simplifies resource management by automatically handling setup and cleanup tasks
 # It is commonly used with: files, network connections, and databases
 
+with open('hello.txt','w') as file:
+    file.write('hello')
+
