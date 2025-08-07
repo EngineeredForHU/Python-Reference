@@ -53,6 +53,7 @@ def add_total(total_cost):
     print(f'Total Cost: ${total_cost_of_items}')
 
 
+# Removes an item from a list
 def remove_item(finished_grocery_list):
     display_info(finished_grocery_list)
     item_to_be_removed = input("What item would you like to remove? ")
