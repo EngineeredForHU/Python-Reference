@@ -1,4 +1,5 @@
 # Creating a TO-DO LIST
+from datetime import  datetime
 
 grocery_list = []
 
@@ -42,6 +43,7 @@ def display_info(finished_grocery_list):
         print(f"{i:<5}{item['quantity']:<5} {item['item']:<15} ${item['price']:<10} ${item_total_cost:<10}")
     # Calls the add_total() method to add the total cost of all the items in the list
     add_total(finished_grocery_list)
+    print()
 
 # This method adds the total cost of the items in the list
 def add_total(total_cost):
@@ -74,6 +76,7 @@ def save_to_file(filename, grocery_list_to_save):
         for i in grocery_list_to_save:
             total_cost_of_items += i['quantity'] * i['price']
         file.write(f'Total Cost: ${str(total_cost_of_items)}')
+        file.write(f'\nCreated @: {datetime.now()}')
     print("✅ File created/saved successfully!\n")
 
 while True:
