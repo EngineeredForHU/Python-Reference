@@ -1,3 +1,4 @@
+# This is an example of using classes
 
 class Student:
     def __init__(self, name, age, grade):
